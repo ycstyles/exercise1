@@ -1,0 +1,97 @@
+<idoctype html>
+<head>
+	<meta charset = "utf-8">
+	<link href='normalize.css' rel="stylesheet">
+	<link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+	<style>
+		html { font-family: 'Spoqa Han Sans'; font-weight: 200;}
+		.section{height:600px;width:100%;position: relative}
+		header{height:100%; background: white;width:30%; transition: all 0.3s}
+		header #logo{width:200px;text-align: center;height:44px;line-height: 50px;font-size: 1.5em;font-weight: 700;position:relative;left:calc(50% - 110px);transition: all 0.3s;color:white}
+		header #menu{width:100px;height:100px;position:relative;left:calc(50% - 80px);top:100px;transition: all 0.3s}
+		header li{width:100px;height:100px;color:black;background: white;float:left;border-radius: 20px;text-align: center;line-height: 100px;color:black;font-size: 2em;margin-left: 20px;margin-right:20px;}
+		h1{color:white;font-size: 3em;text-align: center;padding-top:280px; line-height: 1.2;padding-left: 100px;padding-right: 100px;letter-spacing: -1px;}
+
+
+		#sectionA{ background: blue; transition: all 1s; }
+		#sectionB{ background: grey; transition: all 1s; }
+		#sectionC{ background: url('./a.jpg');background-size:100% auto;background-position: 0px -120px; }
+		#sectionD{ background: white; transition: all 1s; }		
+		#sectionE{ background: url('./b.jpg');background-size:100% auto;background-position: 0px -120px; } 
+		#sectionF{ background: white; transition: all 1s; }
+		#sectionG{ background: url('./c.jpg');background-size:100% auto;background-position: 0px -120px; }
+
+		</style>
+</head>
+<body>
+<header id="header">
+	<div id="logo">답답하다.....ㅠ</div>
+	<div id="menu">
+		<ul>
+			<li id="menuA">Home</li>
+			<li id="menuB">Work A</li>
+			<li id="menuC">Work B</li>
+			<li id="menuD">Work C</li>
+
+		</ul>
+	</div>
+</header>
+<div class="section" id="sectionA">
+
+</div>
+<div class="section" id="sectionB">
+
+</div>
+<div class="section" id="sectionC">
+
+</div>
+<div class="section" id="sectionF">
+    <h1 style="color:black";> 위치 조정은 어떻게 하는거야.....</h1>
+</div>
+<div class="section" id="sectionE">
+
+</div>
+<div class="section">
+	<h1 style="color:black";> 세번째 작품은 아주 힘들게 그린 작품이다.</h1>
+</div>
+<script>
+	window.onscroll = function(){
+		console.log(document.body.scrollTop);
+		var scrollH = document.body.scrollTop;
+		if(scrollH > 200){
+			header.style.height = "100%";
+			header.style.position = "fixed";
+			header.style.top = "0px";
+			header.style.zIndex = "9999";
+			menu.style.left = "50% - 80px";
+			menu.style.top = "100px";
+			logo.style.left = "0px";
+			sectionA.style.marginTop = "-80%";
+		}else{
+			header.style.height = "100%";
+			header.style.position = "fixed";
+			header.style.top = "0px";
+			logo.style.left = "calc(50% - 100px)";
+			menu.style.left = "calc(50% - 80px)";
+			menu.style.top = "100px";
+			sectionA.style.marginTop = "100%";
+
+		}
+
+
+		window.onload = function(){window.scrollTo(0,0);}
+		
+		menuA.onclick = function(){ aniScroll(0); }
+		menuB.onclick = function(){ aniScroll(600); }
+		m3.onclick = function(){ aniScroll(1200); }
+		m4.onclick = function(){ aniScroll(1800); }
+		m5.onclick = function(){ aniScroll(2400); }
+		m6.onclick = function(){ aniScroll(3000); }
+		function aniScroll(destination){
+			var distance = destination - document.body.scrollTop;
+			scrollByAnimated(distance, 250);
+		}
+
+	}
+</script>
+</body>
